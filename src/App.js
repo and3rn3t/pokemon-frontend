@@ -4,6 +4,8 @@ import axios from "axios";
 
 import "./App.css";
 
+import Pokemon from "./Components/Pokemon/Pokemon";
+
 class App extends Component {
   constructor() {
     super();
@@ -19,9 +21,19 @@ class App extends Component {
   }
 
   render() {
+    // console.log(this.state.pokemons);
     return (
       <div>
-        <h1>Pokemon Comparator</h1>
+        <div>
+          <h1>Pokemon Comparator</h1>
+        </div>
+
+        <Route
+          path="/pokemon/:id"
+          component={(routerProps) => (
+            <Pokemon {...routerProps} pokemons={this.state.pokemons} />
+          )}
+        />
       </div>
     );
   }
