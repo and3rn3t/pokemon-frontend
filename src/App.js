@@ -10,6 +10,7 @@ import AllPokemon from "./Components/AllPokemon/AllPokemon";
 const apiUrl =
   process.env.REACT_APP_BACKEND_URL ||
   "https://pokemon-comparator-backend.herokuapp.com/api/pokemon";
+// "https://localhost:3000/api";
 
 class App extends Component {
   constructor() {
@@ -19,12 +20,13 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
-    axios.get({ apiUrl }).then((response) => {
-      this.setState({
-        pokemons: response.data.pokemons,
-      });
-    });
+  async fetchPokemons() {
+    let results = await axios.get(apiUrl);
+    this.setState({ pokemons: results.data.pokemons });
+  }
+
+  async componentDidMount() {
+    await this.fetchPokemons();
   }
 
   render() {
