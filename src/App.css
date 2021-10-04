@@ -1,3 +1,7 @@
 li {
   list-style-type: none;
 }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
