@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Pokémon Comparator Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+The Pokémon Comparator Application will show information about a given Pokémon from the list. Such information includes species, height, weight, skills, abilities and other important information. Clicking the name of a Pokémon will bring you to their informational page.
 
-In the project directory, you can run:
+## Features / User Stories
 
-### `npm start`
+- <v2> As a user, I would like to easily and visually see differences between two different Pokémon - so that I can make decisions.
+- <v1 mvp complete> As a developer, I would like to use an API in order to retrieve Pokémon information - so that the database stays consistent.
+- <v1 mvp complete> As a developer, I would like to serve an API to a front-end, so that if I choose a different technology it is easier to change.
+- <v2> As a user, I would like to quickly choose two Pokémon - so that I can make decisions.
+- <v1 mvp complete> As a user, I want to see a variety of useful facts and statistics, so that I can decide which is more powerful.
+- <v1 mvp complete> As a developer, I want to use an Express.js backend with a React frontend - so that the application is easier to update later.
+- <v2> As a user, I want to see a high-res picture of the Pokémon, so that I can see for sure which one is the one I chose.
+- <v1 mvp complete> As a user, I want to see generation of Pokémon, so I know how long a species has been around.
+- <v1 mvp complete> As a user, I want to quickly see stats for each Pokémon, so that I don't have to spend a lot of time searching.
+- <v2> As a user, I would like a quick live-search to identify a Pokémon by name, so that they are easy to find.
+- <v2> As a developer, I want to be sure images are cached and easy to fetch, so that the display page loads quickly.
+- <v2> As a developer, I want to be sure the API continues to work correctly with new data, so that users get current info.
+- <v2> As a user, I do not care about styling and would prefer a basic, no-nonsense style, so that I can focus on the data.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies Used
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- React for front-end user experience
+- node.js for back-end serving API
+- axios to retrieve API data from back-end
+- Heroku for deployment of both ends
+- Github public for code repository
+  
+## Issues and Resolution
+  1. Migrating models to Heroku... I did not have seed files as the data were imported from .csv files. So I had to configure pgAdmin to connect to Heroku instance remotely, and then import data from there.
+  2. Equality operator... My front-end was comparing a model ID to a parameter ID, which are different data types. I was using a '===', thus no match was being returned. After speaking to Joseph, I used the correct operator and it worked.
+  3. Data models in general... since data is static I decided to use .csv files to load the database tables. This proved problematic every time I had to revert and re-migrate models (I had to re-import each time). Also did not necessarily have every ID and model correctly configured. This honestly just took some experimentation and back-and-forth to figure out.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+##Contribution Guidelines**
+  - All code is stored on [GitHub Public](https://github.com/and3rn3t/pokemon-frontend)
+  - Production application is hosted on [Heroku](https://pokemon-comparator-frontend.herokuapp.com)
