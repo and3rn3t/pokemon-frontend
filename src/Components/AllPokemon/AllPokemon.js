@@ -5,8 +5,8 @@ class AllPokemon extends Component {
   render() {
     const allPokemon = this.props.pokemons.map((pokemon) => {
       return (
-        <li key={pokemon.id}>
-          <Link to={`/pokemon/${pokemon.id}`}>{pokemon.pokemonName}</Link>
+        <li key={pokemon.pokeId}>
+          <Link to={`/pokemon/${pokemon.pokeId}`}>{pokemon.pokemonName}</Link>
         </li>
       );
     });

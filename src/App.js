@@ -20,12 +20,12 @@ class App extends Component {
     const response = await axios.get(this.apiUrl);
     this.setState({ pokemons: response.data.pokemons });
   }
-
+  
   render() {
     return (
       <div className="App">
         <nav>
-          <Link to="/">All Pokemon</Link>
+          <Link to="/"><h1>Pokemon Comparator</h1></Link>
         </nav>
         <main>
           <Switch>
