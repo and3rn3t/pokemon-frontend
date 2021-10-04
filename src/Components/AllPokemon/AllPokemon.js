@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 class AllPokemon extends Component {
   render() {
-    console.log(this.props.pokemons);
     const allPokemon = this.props.pokemons.map((pokemon) => {
       return (
         <li key={pokemon.pokeId}>
@@ -13,7 +12,6 @@ class AllPokemon extends Component {
     });
     return (
       <div>
-        <h1>All Pokemon</h1>
         <ul>{allPokemon}</ul>
       </div>
     );
