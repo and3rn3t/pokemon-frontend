@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import { Switch, Link, Route } from "react-router-dom";
+import { Link, Switch, Route } from "react-router-dom";
 import axios from "axios";
 
 import "./App.css";
 
 import Pokemon from "./Components/Pokemon/Pokemon";
+import AllPokemon from "./Components/AllPokemon/AllPokemon";
 
 class App extends Component {
   constructor() {
@@ -21,19 +22,26 @@ class App extends Component {
   }
 
   render() {
-    // console.log(this.state.pokemons);
     return (
-      <div>
-        <div>
-          <h1>Pokemon Comparator</h1>
-        </div>
-
-        <Route
-          path="/pokemon/:id"
-          component={(routerProps) => (
-            <Pokemon {...routerProps} pokemons={this.state.pokemons} />
-          )}
-        />
+      <div className="App">
+        <nav>
+          <Link to="/">All Pokemon</Link>
+        </nav>
+        <main>
+          <Switch>
+            <Route
+              exact
+              path="/"
+              component={() => <AllPokemon pokemons={this.state.pokemons} />}
+            />
+            <Route
+              path="/pokemon/:id"
+              component={(routerProps) => (
+                <Pokemon {...routerProps} pokemons={this.state.pokemons} />
+              )}
+            />
+          </Switch>
+        </main>
       </div>
     );
   }

@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-class Pokemon extends Component {
+class AllPokemon extends Component {
   render() {
     const allPokemon = this.props.pokemons.map((pokemon) => {
       return (
-        <li key={pokemon.pokeId}>
-          <Link to={`/pokemon/${pokemon.pokeId}`}>{pokemon.pokemonName}</Link>
+        <li key={pokemon.id}>
+          <Link to={`/pokemon/${pokemon.id}`}>{pokemon.pokemonName}</Link>
         </li>
       );
     });
@@ -19,4 +19,4 @@ class Pokemon extends Component {
   }
 }
 
-export default Pokemon;
+export default AllPokemon;
