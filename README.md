@@ -33,6 +33,6 @@ The Pokémon Comparator Application will show information about a given Pokémon
   2. Equality operator... My front-end was comparing a model ID to a parameter ID, which are different data types. I was using a '===', thus no match was being returned. After speaking to Joseph, I used the correct operator and it worked.
   3. Data models in general... since data is static I decided to use .csv files to load the database tables. This proved problematic every time I had to revert and re-migrate models (I had to re-import each time). Also did not necessarily have every ID and model correctly configured. This honestly just took some experimentation and back-and-forth to figure out.
 
-##Contribution Guidelines**
+## Contribution Guidelines
   - All code is stored on [GitHub Public](https://github.com/and3rn3t/pokemon-frontend)
   - Production application is hosted on [Heroku](https://pokemon-comparator-frontend.herokuapp.com)
