@@ -9,7 +9,7 @@ import AllPokemon from "./Components/AllPokemon/AllPokemon";
 
 const apiUrl =
   process.env.REACT_APP_BACKEND_URL ||
-  "https://pokemon-comparator-frontend.herokuapp.com/api";
+  "https://pokemon-comparator-backend.herokuapp.com/api/pokemon";
 
 class App extends Component {
   constructor() {
@@ -20,9 +20,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get(`${apiUrl}/pokemon`).then((response) => {
+    axios.get({ apiUrl }).then((response) => {
       this.setState({
-        artists: response.data.pokemons,
+        pokemons: response.data.pokemons,
       });
     });
   }
